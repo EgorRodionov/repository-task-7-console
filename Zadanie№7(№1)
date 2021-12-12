@@ -1,0 +1,19 @@
+using System;
+using System.Text;
+
+namespace Zadanie_7__1_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите строку:");
+            string s = Console.ReadLine();
+            Console.WriteLine("Исходная строка: " + s);
+            Console.WriteLine("Введите удаляемый символ x:");
+            string x = Console.ReadLine();
+            string result = s.Replace(x, string.Empty);
+            Console.WriteLine("Измененная строка: " + result);
+        }
+    }
+}
