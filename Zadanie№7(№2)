@@ -1,0 +1,37 @@
+using System;
+using System.Text;
+
+namespace Zadanie_7__2_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите сообщение:");
+            StringBuilder a = new StringBuilder(Console.ReadLine());
+            Console.WriteLine();
+            Console.Clear();
+            Console.WriteLine("Исходная строка: " + a);
+            Console.WriteLine();
+            Console.WriteLine("Введите слово, которое надо посчитать:");
+                string word = Console.ReadLine();
+
+            for (int i = 0; i < a.Length;)
+                if (char.IsPunctuation(a[i])) a.Remove(i, 1);
+                else ++i;
+
+            string str = a.ToString();
+            str = str.Trim();
+            int count = 0;
+            string [] mas = str.Split(' ');
+            foreach(string elem in mas)
+            {
+                if(elem == word)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("Слово \"{0}\" встречается в тексте {1} раз(а)", word, count);
+        }
+    }
+}
